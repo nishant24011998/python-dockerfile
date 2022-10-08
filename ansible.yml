@@ -1,7 +1,7 @@
 ---
 
 - name: Configuring address-matching environment
-  hosts: all
+  hosts: dev
   become: yes
   become_user: root
   tasks:

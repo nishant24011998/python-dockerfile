@@ -1,15 +1,11 @@
-version: '2.2'
+---
+version: "3.3"
 
 services:
- 
-  vahana-dms:
-    image: 712693083859.dkr.ecr.ap-south-1.amazonaws.com/tpg-vahana-dms:master-1.0.96
-    volumes:
-      - /home/ubuntu/vahana-core-stack/vConnect/vahana-dms:/usr/deployment
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    environment:
-      - JVM_OPTS=-Xms512m -Xmx1024m -XX:MaxPermSize=1024m
+  python-calculator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: python-calculator-latest:latest
     ports:
-      - "9047:9047"
-    network_mode: host
+      - "3000:3000"
